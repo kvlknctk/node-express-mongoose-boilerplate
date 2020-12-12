@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/hagopj13/node-express-mongoose-boilerplate/compare/v1.4.1...v1.5.0) (2020-09-28)
+
+### Features
+
+- add sorting by multiple criteria option ([677ee12](https://github.com/hagopj13/node-express-mongoose-boilerplate/commit/677ee12808ba1cf02e422498ae464159345dc76f)), closes [#29](https://github.com/hagopj13/node-express-mongoose-boilerplate/issues/29)
+
+## [1.4.1](https://github.com/hagopj13/node-express-mongoose-boilerplate/compare/v1.4.0...v1.4.1) (2020-09-14)
+
+### Bug Fixes
+
+- upgrade mongoose to solve vulnerability issue ([1650bdf](https://github.com/hagopj13/node-express-mongoose-boilerplate/commit/1650bdf1bf36ce13597c0ed3503c7b4abef01ee5))
+- add type to token payloads ([eb5de2c](https://github.com/hagopj13/node-express-mongoose-boilerplate/commit/eb5de2c7523ac166ca933bff83ef1e87274f3478)), closes [#28](https://github.com/hagopj13/node-express-mongoose-boilerplate/issues/28)
+
+## [1.4.0](https://github.com/hagopj13/node-express-mongoose-boilerplate/compare/v1.3.0...v1.4.0) (2020-08-22)
+
+### Features
+
+- use native functions instead of Lodash ([66c9e33](https://github.com/hagopj13/node-express-mongoose-boilerplate/commit/66c9e33d65c88989634fc485e89b396645670730)), closes [#18](https://github.com/hagopj13/node-express-mongoose-boilerplate/issues/18)
+- add logout endpoint ([750feb5](https://github.com/hagopj13/node-express-mongoose-boilerplate/commit/750feb5b1ddadb4da6742b445cdb1112a615ace4)), closes [#19](https://github.com/hagopj13/node-express-mongoose-boilerplate/issues/19)
+
 ## [1.3.0](https://github.com/hagopj13/node-express-mongoose-boilerplate/compare/v1.2.0...v1.3.0) (2020-05-17)
 
 ### Features

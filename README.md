@@ -9,6 +9,20 @@ A boilerplate/starter project for quickly building production-ready RESTful APIs
 
 It comes with many built-in features, such as authentication using JWT, request validation, unit and integration tests, continuous integration, docker support, API documentation, pagination, etc. For more details about the features, check the list below.
 
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [API Documentation](#api-documentation)
+- [Error Handling](#error-handling)
+- [Validation](#validation)
+- [Authentication](#authentication)
+- [Authorization](#authorization)
+- [Logging](#logging)
+- [Custom Mongoose Plugins](#custom-mongoose-plugins)
+- [Linting](#linting)
+
 ## Features
 
 - **ES9**: latest ECMAScript features
@@ -199,7 +213,7 @@ const getUser = async (userId) => {
 
 ## Validation
 
-Request data is validated using [Joi](https://hapi.dev/family/joi/). Check the [documentation](https://hapi.dev/family/joi/api/) for more details on how to write Joi validation schemas.
+Request data is validated using [Joi](https://joi.dev/). Check the [documentation](https://joi.dev/api/) for more details on how to write Joi validation schemas.
 
 The validation schemas are defined in the `src/validations` directory and are used in the routes by providing them as parameters to the `validate` middleware.
 
@@ -264,12 +278,12 @@ If the user making the request does not have the required permissions to access 
 
 ## Logging
 
-Import the logger from `src/utils/logger.js`. It is using the [Winston](https://github.com/winstonjs/winston) logging library.
+Import the logger from `src/config/logger.js`. It is using the [Winston](https://github.com/winstonjs/winston) logging library.
 
 Logging should be done according to the following severity levels (ascending order from most important to least important):
 
 ```javascript
-const logger = require('<path to src>/utils/logger');
+const logger = require('<path to src>/config/logger');
 
 logger.error('message'); // level 0
 logger.warn('message'); // level 1
@@ -289,7 +303,7 @@ Note: API request information (request url, response code, timestamp, etc.) are 
 
 ## Custom Mongoose Plugins
 
-The app also contains 2 custom mongoose plugins that you can attach to any mongoose model schema. You can find the plugins in `src/models/plugins.js`.
+The app also contains 2 custom mongoose plugins that you can attach to any mongoose model schema. You can find the plugins in `src/models/plugins`.
 
 ```javascript
 const mongoose = require('mongoose');
@@ -334,11 +348,13 @@ The `options` param can have the following (optional) fields:
 
 ```javascript
 const options = {
-  sortBy: 'name:desc',
-  limit: 5,
-  page: 2,
+  sortBy: 'name:desc', // sort order
+  limit: 5, // maximum results per page
+  page: 2, // page number
 };
 ```
+
+The plugin also supports sorting by multiple criteria (separated by a comma): `sortBy: name:desc,role:asc`
 
 The `paginate` method returns a Promise, which fulfills with an object having the following properties:
 
